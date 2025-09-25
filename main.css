@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --primary: #6366F1;
+
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+
+  --clr-body-background: var(--clr-white);
+  --clr-body-text: #565973;
+  --clr-heading-text: #000F19;
+
+  --clr-button-text: var(--clr-white);
+  --clr-button-background: var(--primary);
+  --clr-button-hover-background: #000F19;
+
+  --clr-border-light: #e5e7eb;
+  --clr-shadow-light: rgba(0,0,0,0.05);
+
+  --clr-hero-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
+  --clr-hero-gradient-dark: linear-gradient(180deg, #0b1520 0%, #000F19 100%);
+}
+
+
+body.darkmode {
+  --clr-body-background: #0b0f19;
+  --clr-body-text: #d1d5db;
+  --clr-heading-text: #ffffff;
+
+  --clr-button-background: #374151;
+  --clr-button-hover-background: #6366F1;
+
+  --clr-border-light: #374151;
+  --clr-shadow-light: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--clr-body-text);
+  background-color: var(--clr-body-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { color: var(--clr-heading-text); }
+
+button, .btn {
+  color: var(--clr-button-text);
+  background-color: var(--clr-button-background);
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+button:hover, .btn:hover {
+  background-color: var(--clr-button-hover-background);
+}
+
+
+.container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+section {
+  text-align: left;  /* default vänster */
+}
+
+.hero, .brands {
+  text-align: center;  /* dessa två ska fortfarande vara centrerade */
+}
+
+section > * {
+  margin-left: auto;
+  margin-right: auto;          
+}
+
+
+
+/* === Dark Mode === */
+body.darkmode {
+  --clr-body-background:#000F19;
+  --clr-heading-text:#ffffff;
+  --color-body-text:#d1d5db;
+  --clr-button-background:#374151;
+  --clr-button-hover-background:#6366F1;
+
+  background-color: var(--clr-body-background);
+  color: var(--color-body-text);
+}
+
+body.darkmode header { background-color: #0b1520; }
+body.darkmode .header-area { border-color:#1f2937; }
+body.darkmode .hero { background-color: #111827; }
+body.darkmode .hero-content h2 { color:#fff; }
+body.darkmode .hero-content p { color:#c7d2fe; }
+
+body.darkmode .btn {
+  background-color: var(--clr-button-background);
+  color: var(--clr-button-text);
+}
+
+/* Butiksknappar-knappar i dark mode */
+body.darkmode .store-btn {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+body.darkmode .store-btn:hover { background-color: #374151; }
+
+/* === Header === */
+.header-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76px;
+}
+
+.logotype { display: flex; align-items: center; gap: .5rem; }
+.headline { margin-left: 0; }
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Darkmode Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+  margin-left: 8px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+
+
+.switch input:checked + .slider { 
+  background-color: var(--primary); }
+.switch input:checked + .slider:before { 
+  transform: translateX(22px); }
+
+section { 
+  padding: 80px 0; }
+
+
+/* Hamnurger-menu*/
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--clr-heading-text);
+}
+
+.header-area .icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobil-läge */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+    .darkmode-text {
+    display: none;
+  }
+
+    .btn {
+    display: none;
+  }
+}
+
+  .nav-links a {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  /* Dölj signup-knappen på mobil */
+  .signup-btn {
+    display: none;
+  }
+
+  /*hambuber-style no background */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;      
+  height: 20px;     
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Hamburgerstrecken */
+.hamburger span {
+  display: block;
+  height: 3px;                   
+  width: 100%;                   
+  background-color: var(--clr-heading-text);
+  border-radius: 2px;            
+  transition: 0.3s;
+}
+
+/* ger ingen svart bakgrund när jag klickat på hamburgaren */
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+  background: none;
+  box-shadow: none;
+}
+/* Styla hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* === Hero === */
+.hero {
+  background: #FFFFFF;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
+  padding-bottom: 0;
+}
+
+
+.hero-container {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  max-width: 1200px;  
+  margin: 0 auto;      
+  padding: 0 2rem;     
+}
+
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--clr-heading-text);
+}
+
+.hero-content p {
+  color: var(--color-body-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* === Download buttons === */
+.button-download{
+  display:flex;
+  flex-direction:column;            
+  align-items:center;
+  gap:1rem;
+  margin-top:2rem;
+  width:100%;
+}
+
+.store-badge{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;                  
+  border-radius:8px;
+  width:90%;                        
+  max-width:360px;                  
+  height:56px;
+  padding-inline:16px;              
+  transition:background .3s;
+  overflow:hidden;                  
+}
+
+.store-badge img{
+  display:none;
+  height:34px;
+  width:auto;
+  max-width:80%;
+}
+
+/* light/dark loggor */
+.store-badge img.light{display:block;}
+body.darkmode .store-badge{background:#fff;}
+body.darkmode .store-badge img.light{display:none;}
+body.darkmode .store-badge img.dark{display:block;}
+
+/* Tablet (>=768px) */
+@media (min-width:768px){
+  .button-download{
+    flex-direction:row;
+    justify-content:center;
+    width:auto;
+  }
+  .store-badge{
+    width:220px;
+    height:60px;
+  }
+  .store-badge img{
+    height:36px;
+    max-width:80%;
+  }
+}
+
+/* Desktop (>=1320px) */
+@media (min-width:1320px){
+  .store-badge{
+    width:240px;
+    height:66px;
+  }
+  .store-badge img{
+    height:40px;
+    max-width:78%;
+  }
+}
+
+/* ===== Hero Image ===== */
+.hero-image {
+  display: none; /* hidden on mobile */
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  padding-bottom 0;
+  display: block;
+  
+  
+}
+
+/* mobile hero */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-image {
+    display: block;
+    flex: 1;
+    text-align: right;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* tabelet */
+@media (min-width: 1024px) {
+  .hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;  
+    gap: 2rem;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-image {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+
+/* ===== Desktop ===== */
+@media (min-width: 1320px) {
+  .hero {
+    padding: 6rem, 0;
+    padding-bottom: 0;
+    
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+
+  .store-badge img {
+    height: 52px;
+  }
+}
+
+/* ===== Dark Mode Background ===== */
+body.darkmode .hero {
+  background: linear-gradient(180deg, #0b1520 0%, #000F19 100%);
+}
+
+
+/* === Brands === */
+.brands { 
+  background: var(--clr-white); 
+}
+@media screen and (max-width: 767px) {
+  .brands-section .brand-logo {
+    display: none;
+  }
+}
+
+/* Tablet: visa endast logga 2–5 i brands */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .brands-section .brand-logo {
+    display: none;
+  }
+
+  .brands-section .brand-logo:nth-child(2),
+  .brands-section .brand-logo:nth-child(3),
+  .brands-section .brand-logo:nth-child(4),
+  .brands-section .brand-logo:nth-child(5) {
+    display: block;
+  }
+}
+
+.brands-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.brand-logo {
+  background: var(--clr-white);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex: 1 1 150px;
+  max-width: 200px;
+  box-sizing: border-box;
+}
+.brand-logo img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Dark mode overrides */
+body.darkmode .brands {
+  background: var(--clr-body-background); 
+}
+
+body.darkmode .brand-logo {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: none; 
+}
+
