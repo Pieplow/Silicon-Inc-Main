@@ -94,7 +94,7 @@ section {
 }
 
 .hero, .brands {
-  text-align: center;  /
+  text-align: center;
 }
 
 section > * {
@@ -795,13 +795,33 @@ body.darkmode .brand-logo {
 
 
 
-
-/*Testimonials*/
-
-
 .testimonials-section {
   background-color: var(--clr-second-background);
   padding: 80px 0;
+
+  .testimonial-dark {
+  display: none;
+}
+
+}
+
+/* Dölj dark-bilder som standard */
+.testimonial-dark {
+  display: none;
+}
+
+/* När darkmode är aktivt */
+body.darkmode .testimonial-light {
+  display: none;   
+}
+body.darkmode .testimonial-dark {
+  display: inline-block; 
+}
+
+@media (max-width: 1024px) {
+  .testimonials-section {
+    display: none;
+  }
 }
 
 .testimonials {
@@ -831,6 +851,7 @@ body.darkmode .brand-logo {
   display: block;
 }
 
+
 /*Newsletter form*/
 
 .newsletter-section {
@@ -853,7 +874,7 @@ body.darkmode .brand-logo {
 
 .icon-and-text {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 0.75rem;
 }
 
