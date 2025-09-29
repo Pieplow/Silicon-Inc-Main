@@ -35,6 +35,7 @@ body.darkmode {
 
   --clr-button-background: #374151;
   --clr-button-hover-background: #6366F1;
+  --clr-second-background: #151822;
 
   --clr-border-light: #374151;
   --clr-shadow-light: none;
@@ -670,7 +671,7 @@ body.darkmode .brand-logo {
   display: none;
 }
 
-/* Tablet & Desktop: visa left/right */
+/* Tablet & Desktop (>=768px): visa alla tre i grid */
 @media (min-width: 768px) {
   .how-does-it-work-images {
     display: grid;
