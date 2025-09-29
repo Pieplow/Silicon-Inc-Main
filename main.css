@@ -957,6 +957,62 @@ body.darkmode .testimonial-dark {
   }
 }
 
+.faq-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Question button */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  position: relative;
+  color: #111; /* 👈 gör texten synlig */
+}
+
+/* Arrow using ::after */
+.faq-question::after {
+  content: "⌄"; /* pil nedåt */
+  font-size: 16px;
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.3s ease;
+  color: #4f46e5; /* blå pil */
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(180deg); /* pil uppåt när öppen */
+}
+
+/* Answer */
+.faq-answer {
+  display: none;
+  padding: 0 1.2rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-top: 1px solid #eee;
+  color: #444;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
 
 
 /*FOOTER*/
