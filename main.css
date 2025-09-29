@@ -94,7 +94,7 @@ section {
 }
 
 .hero, .brands {
-  text-align: center;  /
+  text-align: center;
 }
 
 section > * {
@@ -714,13 +714,13 @@ body.darkmode .brand-logo {
 .how-does-it-work .headline-b { display: block; }  /* Latest syns */
 
 /* Tablet (768–1023px): visa Step 3 istället */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .how-does-it-work .headline-a { display: block; }
   .how-does-it-work .headline-b { display: none; }
 }
 
-/* Desktop (>=1024px): tillbaka till Latest */
-@media (min-width: 1024px) {
+/* Desktop (>=1025px): tillbaka till Latest */
+@media (min-width: 1025px) {
   .how-does-it-work .headline-a { display: none; }
   .how-does-it-work .headline-b { display: block; }
 }
@@ -795,13 +795,33 @@ body.darkmode .brand-logo {
 
 
 
-
-/*Testimonials*/
-
-
 .testimonials-section {
   background-color: var(--clr-second-background);
   padding: 80px 0;
+
+  .testimonial-dark {
+  display: none;
+}
+
+}
+
+/* Dölj dark-bilder som standard */
+.testimonial-dark {
+  display: none;
+}
+
+/* När darkmode är aktivt */
+body.darkmode .testimonial-light {
+  display: none;   
+}
+body.darkmode .testimonial-dark {
+  display: inline-block; 
+}
+
+@media (max-width: 1024px) {
+  .testimonials-section {
+    display: none;
+  }
 }
 
 .testimonials {
@@ -830,4 +850,112 @@ body.darkmode .brand-logo {
   height: auto;
   display: block;
 }
+
+
+/* === Newsletter form === */
+.newsletter-section {
+  padding: 60px 0;
+}
+
+.newsletter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--clr-second-background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Ikon + rubrik */
+.newsletter-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.newsletter-icon {
+  width: 48px;
+  height: auto;
+}
+
+/* Mobile & Tablet (default) */
+.headline-short { display: block; font-size: 1.25rem; font-weight: 600; }
+.headline-long  { display: none; }
+
+
+/* Form */
+.newsletter-right {
+  display: flex;
+  width: 100%;
+}
+
+.newsletter-right input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+}
+
+.newsletter-right button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background-color: #6366F1;
+  color: #fff;
+  border-radius: 0 6px 6px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-right button:hover {
+  background-color: #4f46e5;
+}
+
+/* === Tablet (≥768px) === */
+@media (min-width: 768px) {
+  .newsletter-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 720px;
+    padding: 2rem;
+  }
+
+  .newsletter-left {
+    flex: 1;
+  }
+
+  .newsletter-right {
+    flex: 0 0 380px;
+  }
+}
+
+
+/* === Desktop (≥1024px) === */
+@media (min-width: 1025px) {
+  .headline-short { display: none; }
+  .headline-long { display: block; font-size: 1.5rem; line-height: 1.4; }
+
+  .newsletter-box {
+    max-width: 1200px;
+    padding: 2.5rem 3rem;
+  }
+
+  .newsletter-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .newsletter-icon {
+    width: 64px; /* större ikon */
+  }
+}
+
+
 
