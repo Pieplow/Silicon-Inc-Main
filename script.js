@@ -25,3 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
+
+//Öppna och stänga accordion test//
+document.querySelectorAll(".arrow-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const faqItem = btn.closest(".faq-item");
+
+    // Stäng alla andra
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== faqItem) {
+        item.classList.remove("active");
+      }
+    });
+
+    // toggla denna
+    faqItem.classList.toggle("active");
+  });
+});
