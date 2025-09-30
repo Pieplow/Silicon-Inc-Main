@@ -80,6 +80,21 @@ button:hover, .btn:hover {
   background-color: var(--clr-button-hover-background);
 }
 
+.btn-app {
+  color: var(--clr-button-text);
+  background-color: var(--clr-button-background);
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+  width: 40%;
+}
+
+.btn-app:hover {
+  background-color: var(--clr-button-hover-background);
+}
+
 
 .container {
   max-width: 1320px;
@@ -793,7 +808,7 @@ body.darkmode .brand-logo {
   height: 20px;
 }
 
-
+/*Testimonial*/
 
 .testimonials-section {
   background-color: var(--clr-second-background);
