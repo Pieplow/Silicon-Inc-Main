@@ -1066,7 +1066,8 @@ body.darkmode .contact-section img.light {
   .contact-section img {
     display: inline-block;
     margin: 0 0.5rem;
-    max-width: 40px;
+    max-width: none; 
+    height: auto;
   }
 
   .accordion-section {
@@ -1107,7 +1108,7 @@ body.darkmode .contact-section img.light {
 .faq-question {
   font-size: 1rem;
   font-weight: 600;
-  color: #111;
+  color: var(--clr-white);
 }
 
 /* knappar */
