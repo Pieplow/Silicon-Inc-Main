@@ -1092,6 +1092,10 @@ body.darkmode .contact-section img.light {
     max-width: none;
     height: auto;
   }
+
+  .contact-mobile-btn {
+    display: none;
+  }
 }
 
 /* FAQ-boxar */
