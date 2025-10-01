@@ -288,7 +288,7 @@ section {
 }
 /* Styla hamburger menu */
 .topnav a.icon {
-  background: var(--clr-black)
+  background: var(--clr-black);
   display: block;
   position: absolute;
   right: 0;
@@ -431,6 +431,24 @@ body.darkmode .store-badge img.dark{display:block;}
 
   .hero-content h1 {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Extra luft i hero-sektionen */
+  .hero {
+    padding-bottom: 3rem; /* justera vid behov */
+  }
+
+  /* Låt knapparna få mer space från kanten */
+  .button-download {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Dölj hela brands-sektionen på mobil */
+  .brands {
+    display: none !important;
   }
 }
 
@@ -1133,8 +1151,10 @@ body.darkmode .contact-section img.light {
 .faq-question {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--clr-white);
+  color: var(--clr-black);
 }
+
+
 
 /* knappar */
 .arrow-btn {
@@ -1179,32 +1199,42 @@ body.darkmode .contact-section img.light {
 
 .faq-item.active .faq-answer { display: block; }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body { background: #111; color: #eee; }
-
-  .faq-item {
-    background: #1e1e1e;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  }
-  .faq-question { 
-    color: var(--clr-second-background); }
-  .faq-answer { 
-    color: #ccc; 
-    border-top: 1px solid #333; }
-  .arrow-btn { 
-    background: #333; }
-  .arrow-btn::after { 
-    color: var(--clr-second-background); }
-  .faq-item.active .arrow-btn { background: var(--primary); }
-  .faq-item.active .arrow-btn:hover { background: var(--primary); }
-
-  /* ikoner */
-  .icon-phone { content: url("Content/icon-box-phone-dark.svg"); }
-  .icon-message { content: url("Content/icon-box-messge-dark.svg"); }
-
-  .contact-card { background: #1e1e1e; color: #eee; }
+/* FAQ Darkmode */
+body.darkmode .faq-item {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
+
+body.darkmode .faq-question {
+  color: #fff; /* tydlig rubrik */
+}
+
+body.darkmode .faq-answer {
+  color: #ccc;
+  border-top: 1px solid #333;
+}
+
+body.darkmode .arrow-btn {
+  background: #333;
+}
+
+body.darkmode .arrow-btn::after {
+  color: #ccc;
+}
+
+body.darkmode .faq-item.active .arrow-btn {
+  background: var(--primary);
+}
+
+body.darkmode .contact-card {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+/* Darkmode-versioner av ikoner */
+body.darkmode .icon-phone { content: url("Content/icon-box-phone-dark.svg"); }
+body.darkmode .icon-message { content: url("Content/icon-box-messge-dark.svg"); }
+
 
 
 /*FOOTER*/
