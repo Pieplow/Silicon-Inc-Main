@@ -760,9 +760,13 @@ body.darkmode .brand-logo {
 
 /* app features */ 
 
+
+
 .app-features {
   display: none; 
 }
+
+
 
 /* Desktop  */
 @media (min-width: 1024px) {
@@ -972,7 +976,7 @@ body.darkmode .testimonial-dark {
 
 
 /* === Desktop (≥1024px) === */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .headline-short { display: none; }
   .headline-long { display: block; font-size: 1.5rem; line-height: 1.4; }
 
@@ -1090,31 +1094,46 @@ body.darkmode .contact-section img.light {
 
 
 }
-@media (min-width: 768px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .faq-section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
+  /* Rubrik + text ska ligga ovanför (ingen order här!) */
   .contact-section {
-    order: 2; /* flytta under */
+    order: 0;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
-  .contact-section img {
+
+
+  /* Visa endast light som standard */
+  .contact-section img.light {
     display: inline-block;
-    margin: 0 0.5rem;
-    max-width: none; 
-    height: auto;
+  }
+  .contact-section img.dark {
+    display: none;
   }
 
+  /* Byt i darkmode */
+  body.darkmode .contact-section img.light {
+    display: none;
+  }
+  body.darkmode .contact-section img.dark {
+    display: inline-block;
+  }
+
+  /* Accordion ligger först */
   .accordion-section {
-    order: 1; /* accordion först */
+    order: 1;
   }
 }
 
-@media (min-width: 1025px) {
+
+@media (min-width: 1024px) {
   .contact-icons {
     display: flex;
     gap: 1.5rem;
