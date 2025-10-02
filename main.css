@@ -27,7 +27,6 @@
   --clr-hero-gradient-dark: linear-gradient(180deg, #0b1520 0%, #000F19 100%);
 }
 
-
 body.darkmode {
   --clr-body-background: #0b0f19;
   --clr-body-text: #d1d5db;
@@ -75,6 +74,7 @@ button, .btn {
   border: none;
   cursor: pointer;
   transition: background 0.5s ease-in-out;
+  text-decoration: none;
 }
 button:hover, .btn:hover {
   background-color: var(--clr-button-hover-background);
@@ -88,13 +88,12 @@ button:hover, .btn:hover {
   border: none;
   cursor: pointer;
   transition: background 0.5s ease-in-out;
-  width: 40%;
+  width: 30%;
 }
 
 .btn-app:hover {
   background-color: var(--clr-button-hover-background);
 }
-
 
 .container {
   max-width: 1320px;
@@ -116,8 +115,6 @@ section > * {
   margin-left: auto;
   margin-right: auto;          
 }
-
-
 
 /* === Dark Mode === */
 body.darkmode {
@@ -193,8 +190,6 @@ body.darkmode .store-btn:hover { background-color: #374151; }
   transition: 0.4s;
 }
 
-
-
 .switch input:checked + .slider { 
   background-color: var(--primary); }
 .switch input:checked + .slider:before { 
@@ -202,7 +197,6 @@ body.darkmode .store-btn:hover { background-color: #374151; }
 
 section { 
   padding: 80px 0; }
-
 
 /* Hamnurger-menu*/
 .nav-links {
@@ -237,26 +231,21 @@ section {
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     z-index: 999;
   }
-    .darkmode-text {
+  .darkmode-text {
     display: none;
   }
 
-    .btn {
+  .btn {
     display: none;
   }
 }
 
-  .nav-links a {
-    padding: 10px 0;
-    width: 100%;
-  }
+.nav-links a {
+  padding: 10px 0;
+  width: 100%;
+}
 
-  /* Dölj signup-knappen på mobil */
-  .signup-btn {
-    display: none;
-  }
-
-  /*hambuber-style no background */
+/*hambuber-style no background */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -267,6 +256,12 @@ section {
   border: none;
   cursor: pointer;
   padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none; /* göm på desktop */
+  }
 }
 
 /* Hamburgerstrecken */
@@ -286,6 +281,7 @@ section {
   background: none;
   box-shadow: none;
 }
+
 /* Styla hamburger menu */
 .topnav a.icon {
   background: var(--clr-black);
@@ -294,16 +290,51 @@ section {
   right: 0;
   top: 0;
 }
+
+/* Mobil + Tablet (0–1023px): visa hamburgare, göm signup-knapp */
+@media (max-width: 1023px) {
+  .signup-btn {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+}
+
+/* Desktop (≥1024px): visa signup-knapp, göm hamburgare */
+@media (min-width: 1024px) {
+  .signup-btn {
+    display: inline-flex !important;
+    align-items: center;
+  }
+  .hamburger {
+    display: none !important;
+  }
+
+  /* Nav-länkar alltid synliga på desktop */
+  .nav-links {
+    display: flex !important;
+    position: static;
+    background: none;
+    flex-direction: row;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+  }
+}
+
 /* === Hero === */
 .hero {
-  background: var(--clr-white);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
+  background: var(--clr-hero-gradient);
   padding-bottom: 0;
 }
 
+body.darkmode .hero {
+  background: var(--clr-hero-gradient-dark);
+}
 
 .hero-container {
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
@@ -312,7 +343,6 @@ section {
   margin: 0 auto;      
   padding: 0 2rem;     
 }
-
 
 .hero-content {
   max-width: 520px;
@@ -396,6 +426,7 @@ body.darkmode .store-badge img.dark{display:block;}
   }
 }
 
+
 /* ===== Hero Image ===== */
 .hero-image {
   display: none; /* hidden on mobile */
@@ -404,7 +435,7 @@ body.darkmode .store-badge img.dark{display:block;}
   max-width: 100%;
   height: auto;
   padding: 0;
-  padding-bottom 0;
+  padding-bottom: 0;
   display: block;
   
   
