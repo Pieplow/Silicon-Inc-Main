@@ -23,8 +23,8 @@
   --clr-border-light: #e5e7eb;
   --clr-shadow-light: rgba(0,0,0,0.05);
 
-  --clr-hero-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
-  --clr-hero-gradient-dark: radial-gradient(90deg, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 50%, rgba(19, 16, 34, 0.00) 100%);
+  --clr-hero-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
+  --clr-hero-gradient-dark: linear-gradient(180deg, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 50%,rgba(19, 16, 34, 0.00) 100%);
 }
 
 body.darkmode {
@@ -38,6 +38,7 @@ body.darkmode {
 
   --clr-border-light: #374151;
   --clr-shadow-light: none;
+  --clr-hero-gradient: var(--clr-hero-gradient-dark);
 }
 
 html {
@@ -130,7 +131,6 @@ body.darkmode {
 
 body.darkmode header { background-color: #0b1520; }
 body.darkmode .header-area { border-color:#1f2937; }
-body.darkmode .hero { background-color: #111827; }
 body.darkmode .hero-content h2 { color:#fff; }
 body.darkmode .hero-content p { color:#c7d2fe; }
 
@@ -223,7 +223,7 @@ section {
     position: absolute;
     top: 76px;
     right: 0;
-    background: #fff;
+    background: var(--clr-white);
     flex-direction: column;
     align-items: flex-start;
     width: 200px;
@@ -329,9 +329,7 @@ section {
   padding-bottom: 0;
 }
 
-body.darkmode .hero {
-  background: var(--clr-hero-gradient-dark);
-}
+
 
 .hero-container {
   display: flex;
@@ -525,10 +523,7 @@ body.darkmode .store-badge img.dark{display:block;}
   }
 }
 
-/* ===== Dark Mode Background ===== */
-body.darkmode .hero {
-  background: linear-gradient(180deg, #0b1520 0%, #000F19 100%);
-}
+
 
 
 /* === Brands === */
