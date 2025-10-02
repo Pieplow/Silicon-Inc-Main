@@ -127,6 +127,8 @@ body.darkmode {
   --color-body-text:#d1d5db;
   --clr-button-background:#6366F1;
   --clr-button-hover-background:#374151;
+  --brands-background-color: #131022;
+  --clr-second-background: #0f101c;
 
   background-color: var(--clr-body-background);
   color: var(--color-body-text);
@@ -785,6 +787,7 @@ body.darkmode .brand-logo {
   .how-does-it-work .headline-a { display: block; }
   .how-does-it-work .headline-b { display: none; }
 }
+
 
 /* Desktop (>=1025px): tillbaka till Latest */
 @media (min-width: 1025px) {
