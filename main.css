@@ -36,11 +36,12 @@ body.darkmode {
 
   --clr-button-background: #6366f1;
   --clr-button-hover-background: #374151;
-  --clr-second-background: #151822;
+  --clr-second-background: #0f101c;
 
   --clr-border-light: #374151;
   --clr-shadow-light: none;
   --clr-hero-gradient: var(--clr-hero-gradient-dark);
+  --brands-background-color: #131022;
 }
 
 html {
@@ -121,7 +122,7 @@ section > * {
 
 /* === Dark Mode === */
 body.darkmode {
-  --clr-body-background:#000F19;
+  --clr-body-background:#0b0f19;
   --clr-heading-text:#ffffff;
   --color-body-text:#d1d5db;
   --clr-button-background:#6366F1;
@@ -131,7 +132,7 @@ body.darkmode {
   color: var(--color-body-text);
 }
 
-body.darkmode header { background-color: #0b1520; }
+body.darkmode header { background-color: #0b0f19; }
 body.darkmode .header-area { border-color:#1f2937; }
 body.darkmode .hero-content h2 { color:#fff; }
 body.darkmode .hero-content p { color:#c7d2fe; }
@@ -587,7 +588,7 @@ body.darkmode .brands {
 }
 
 body.darkmode .brand-logo {
-  background: #1f2937;
+  background: var(--brands-background-color);
   border-color: #374151;
   box-shadow: none; 
 }
