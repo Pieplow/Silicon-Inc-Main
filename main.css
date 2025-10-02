@@ -698,7 +698,7 @@ body.darkmode .brand-logo {
 
 .how-does-it-work {
   text-align: center; 
-  background-color: var(--clr-second-background);
+  background-color: hsla(0, 0%, 100%, .04);
   padding: 80px 0;
 }
 
