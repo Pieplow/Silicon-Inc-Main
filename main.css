@@ -24,7 +24,7 @@
   --clr-shadow-light: rgba(0,0,0,0.05);
 
   --clr-hero-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(99, 102, 241, 0.07) 83%);
-  --clr-hero-gradient-dark: linear-gradient(180deg, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 50%,rgba(19, 16, 34, 0.00) 100%);
+  --clr-hero-gradient-dark: radial-gradient(180deg, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%), #0B0F19;
 }
 
 body.darkmode {
@@ -327,6 +327,11 @@ section {
 .hero {
   background: var(--clr-hero-gradient);
   padding-bottom: 0;
+}
+
+/* När darkmode är aktivt – tvinga hero att ta dark gradient */
+body.darkmode .hero {
+  background: var(--clr-hero-gradient-dark) !important;
 }
 
 
