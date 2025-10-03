@@ -1162,6 +1162,40 @@ body.darkmode .contact-section img.light {
   }
 }
 
+@media (max-width: 1023px) {
+  .contact-section .contact-icons {
+    display: none !important;
+  }
+}
+
+/* Visa kopian bara på tablet (under accordion) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-only {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .tablet-only img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Light/Dark mode */
+  .tablet-only img.light { display: inline-block; }
+  .tablet-only img.dark { display: none; }
+  body.darkmode .tablet-only img.light { display: none; }
+  body.darkmode .tablet-only img.dark { display: inline-block; }
+}
+
+/* Dölj kopian på mobil & desktop */
+@media (max-width: 767px), (min-width: 1024px) {
+  .tablet-only {
+    display: none !important;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .faq-section {
     display: grid;
@@ -1173,7 +1207,9 @@ body.darkmode .contact-section img.light {
   .contact-section .contact-icons {
     display: none !important;
   }
+
 }
+
 
   
 
@@ -1339,3 +1375,42 @@ body.darkmode .icon-message { content: url("Content/icon-box-messge-dark.svg"); 
   border-top: 1px solid #e5e7eb;
 }
 
+/* === Tablet only icons under accordion === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Dölj originalen i vänsterspalten */
+  .contact-section .contact-icons {
+    display: none !important;
+  }
+
+  /* Visa kopian under accordion */
+/* === Tablet only icons under accordion === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .accordion-section .tablet-only {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr; /* två kolumner */
+    gap: 2rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  .contact-mobile-btn {
+    display: block;
+    margin: 2rem auto 0 auto; /* 2rem ovanför, auto centrerar */
+    text-align: center;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+  .accordion-section .tablet-only img {
+    width: 100%;   /* fyller hela sin kolumn */
+    max-width: 180px; 
+    margin: 0 auto;
+    height: auto;
+  }
+}
+
+  /* Light/dark hantering för kopian */
+  .accordion-section .tablet-only img.light { display: inline-block !important; }
+  .accordion-section .tablet-only img.dark { display: none !important; }
+  body.darkmode .accordion-section .tablet-only img.light { display: none !important; }
+  body.darkmode .accordion-section .tablet-only img.dark  { display: inline-block !important; }
+}
