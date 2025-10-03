@@ -602,6 +602,14 @@ body.darkmode .brand-logo {
   gap: 2rem;
 }
 
+.features-h2,
+.features-p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
 .feature-box-1 {
   display: none;   
 }
@@ -656,16 +664,8 @@ body.darkmode .brand-logo {
     margin: 0 auto;
     padding: 0 2rem;
   }
-
-  /* Rubrik och introtext centrerad */
-  .features-section h2,
-  .features-section > p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 700px;
-  }
-
+  
+  
   /* Två kolumner för boxarna */
   .features-description {
     display: grid;
@@ -699,6 +699,14 @@ body.darkmode .brand-logo {
   .feature-box {
     text-align: left; 
   }
+
+  .features-h2,
+.features-p {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
 
   
 }
