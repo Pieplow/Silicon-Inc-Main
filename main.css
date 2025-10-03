@@ -104,6 +104,20 @@ button:hover, .btn:hover {
   background-color: var(--clr-button-hover-background);
 }
 
+.btn-login {
+  font-size: 0.85rem;     
+  padding: 6px 20px;      
+  display: inline-flex;   
+  align-items: center;    
+  gap: 8px;               
+  height: 36px;           
+}
+
+.btn-login .btn-icon {
+  width: 16px;   
+  height: 16px;
+  display: inline-block;
+}
 .container {
   max-width: 1320px;
   margin-left: auto;
