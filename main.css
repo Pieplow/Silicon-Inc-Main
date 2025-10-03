@@ -63,13 +63,18 @@ body {
   background-color: var(--clr-body-background);
 }
 
-h1,
+h1 {
+  text-align: center;
+}
 h2,
 h3,
 h4,
 h5,
 h6 { color: var(--clr-heading-text); }
 
+.h1-p {
+  text-align: center;
+}
 button, .btn {
   color: var(--clr-button-text);
   background-color: var(--clr-button-background);
@@ -299,6 +304,14 @@ section {
 /* Mobil + Tablet (0–1023px): visa hamburgare, göm signup-knapp */
 @media (max-width: 1023px) {
   .signup-btn {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+}
+@media (max-width: 1023px) {
+  header .btn {
     display: none !important;
   }
   .hamburger {
@@ -962,7 +975,7 @@ body.darkmode .testimonial-dark {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color:hsla(0,0%,100%,.04);
+  background-color:var(--clr-second-background);
   padding: 1.5rem;
   border-radius: 8px;
   margin: 0 auto;
