@@ -794,7 +794,7 @@ body.darkmode .brand-logo {
   display: none;
 }
 
-/* Tablet & Desktop (>=768px): visa alla tre i grid */
+/* Tablet & Desktop (>=768px)*/
 @media (min-width: 768px) {
   .how-does-it-work-images {
     display: grid;
@@ -818,7 +818,7 @@ body.darkmode .brand-logo {
   }
 }
 
-/* Desktop (>=1024px): lite mer luft */
+/* Desktop (>=1024px) */
 @media (min-width: 1024px) {
   .how-does-it-work-images {
     gap: 3rem;
@@ -833,23 +833,23 @@ body.darkmode .brand-logo {
   }
 }
 
-.how-does-it-work .headline-a { display: none; }   /* Step 3 dold */
-.how-does-it-work .headline-b { display: block; }  /* Latest syns */
+.how-does-it-work .headline-a { display: none; }   
+.how-does-it-work .headline-b { display: block; }  
 
-/* Tablet (768–1023px): visa Step 3 istället */
+/* Tablet (768–1023px)*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .how-does-it-work .headline-a { display: block; }
   .how-does-it-work .headline-b { display: none; }
 }
 
 
-/* Desktop (>=1025px): tillbaka till Latest */
+/* Desktop (>=1025px)*/
 @media (min-width: 1025px) {
   .how-does-it-work .headline-a { display: none; }
   .how-does-it-work .headline-b { display: block; }
 }
 
-/* app features */ 
+/* App features */ 
 
 
 
